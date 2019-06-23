@@ -49,3 +49,28 @@ WHERE name LIKE '%o__o%';
 SELECT name
 FROM world
 WHERE name LIKE '____';
+
+-- #11
+SELECT name
+FROM world
+WHERE name = capital;
+
+-- #12
+SELECT name
+FROM world
+WHERE capital = name || ' City';
+
+-- #13
+SELECT capital, name
+FROM world
+WHERE capital LIKE '%' || name || '%';
+
+-- #14
+SELECT capital, name
+FROM world
+WHERE capital LIKE name || '%' AND LENGTH(capital) > LENGTH(name);
+
+-- #15
+SELECT name, REPLACE(capital, name, '') AS ext
+FROM world
+WHERE capital LIKE name || '_%';
