@@ -3,12 +3,11 @@
 -- #1
 SELECT name
 FROM world
-WHERE
-  population > (
-    SELECT population
-    FROM world
-    WHERE name='Russia'
-  );
+WHERE population > (
+  SELECT population
+  FROM world
+  WHERE name='Russia'
+);
 
 -- #2
 SELECT name
@@ -24,12 +23,11 @@ WHERE
 -- #3
 SELECT name, continent
 FROM world
-WHERE
-  continent IN (
-    SELECT continent
-    FROM world
-    WHERE name IN ('Argentina', 'Australia')
-  )
+WHERE continent IN (
+  SELECT continent
+  FROM world
+  WHERE name IN ('Argentina', 'Australia')
+)
 ORDER BY name;
 
 -- #4
@@ -76,20 +74,18 @@ GROUP BY continent;
 -- #9
 SELECT name, continent, population
 FROM world AS w1
-WHERE
-  25000000 > ALL (
-    SELECT population
-    FROM world AS w2
-    WHERE w1.continent = w2.continent
-  );
+WHERE 25000000 > ALL (
+  SELECT population
+  FROM world AS w2
+  WHERE w1.continent = w2.continent
+);
 
 -- #10
 SELECT name, continent
 FROM world AS w1
-WHERE
-  population > ALL (
-    SELECT population * 3
-    FROM world AS w2
-    WHERE w1.continent = w2.continent
-    AND w1.name <> w2.name
-  );
+WHERE population > ALL (
+  SELECT population * 3
+  FROM world AS w2
+  WHERE w1.continent = w2.continent
+  AND w1.name <> w2.name
+);
