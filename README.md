@@ -1,3 +1,3 @@
 # sqlzoo
 
-My solutions to [SQLZOO](http://sqlzoo.net/).
+My solutions to [SQLZOO](https://sqlzoo.net/).
