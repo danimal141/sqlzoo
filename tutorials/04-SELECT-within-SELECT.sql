@@ -46,7 +46,7 @@ SELECT
     '%'
   )
 FROM world
-WHERE continent = 'Europe'
+WHERE continent = 'Europe';
 
 -- #6
 SELECT name

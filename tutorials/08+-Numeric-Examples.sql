@@ -38,15 +38,13 @@ GROUP BY subject;
 -- #6
 SELECT subject, ROUND(SUM(response * A_STRONGLY_AGREE / 100) / SUM(response) * 100)
 FROM nss
-WHERE
-  question = 'Q22' AND (subject = '(8) Computer Science' OR subject = '(H) Creative Arts and Design')
+WHERE question = 'Q22' AND (subject = '(8) Computer Science' OR subject = '(H) Creative Arts and Design')
 GROUP BY subject;
 
 -- #7
 SELECT institution, ROUND(SUM(response*score/100) / SUM(response) * 100,0)
 FROM nss
-WHERE
-  question='Q22' AND (institution LIKE '%Manchester%')
+WHERE question='Q22' AND (institution LIKE '%Manchester%')
 GROUP BY institution;
 
 -- #8

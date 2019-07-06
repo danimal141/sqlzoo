@@ -49,7 +49,7 @@ FROM
   casting
   INNER JOIN actor ON casting.actorid = actor.id
   INNER JOIN movie ON casting.movieid = movie.id
-WHERE name = 'Harrison Ford'
+WHERE name = 'Harrison Ford';
 
 -- #9
 SELECT title
@@ -65,7 +65,7 @@ FROM
   casting
   INNER JOIN actor ON casting.actorid = actor.id
   INNER JOIN movie ON casting.movieid = movie.id
-WHERE yr = 1962 AND ord = 1
+WHERE yr = 1962 AND ord = 1;
 
 -- #11
 SELECT yr, COUNT(title)
@@ -85,7 +85,7 @@ HAVING COUNT(title) = (
     WHERE name = 'John Travolta'
     GROUP BY yr
   ) AS t -- To avoid "Every derived table must have its own alias"
-)
+);
 
 -- #12
 SELECT title, name
@@ -99,7 +99,7 @@ WHERE ord = 1 AND movieid IN (
     casting
     INNER JOIN actor ON casting.actorid = actor.id
     WHERE name = 'Julie Andrews'
-)
+);
 
 -- #13
 SELECT name
